@@ -21,12 +21,23 @@
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
 a{text-decoration:none;color:inherit}.wrap{max-width:var(--max);margin:auto;padding:0 22px}
 header{position:sticky;top:0;z-index:20;background:rgba(7,7,7,.95);backdrop-filter:blur(14px);border-bottom:1px solid #202020}
-.nav{height:72px;display:flex;align-items:center;justify-content:space-between}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between;position:relative}
 .logo{font-size:26px;font-weight:900;letter-spacing:-1px}.logo span{color:var(--red)}
-nav{display:flex;gap:26px;color:#ddd;font-size:14px;align-items:center}
-nav a{color:#ddd;transition:.3s;font-weight:500}
-nav a:hover{color:#fff}
-.menu-toggle{display:none;background:none;border:none;color:#fff;font-size:24px;cursor:pointer}
+/* Desktop Navigation */
+.desktop-nav{display:flex;gap:26px;color:#ddd;font-size:14px;align-items:center}
+.desktop-nav a{color:#ddd;transition:.3s;font-weight:500}
+.desktop-nav a:hover{color:#fff}
+/* Mobile Menu Button */
+.menu-toggle{display:none;background:none;border:none;color:#fff;font-size:28px;cursor:pointer;padding:5px 10px;z-index:100}
+/* Mobile Navigation */
+.mobile-nav{display:none;flex-direction:column;position:absolute;top:72px;left:0;right:0;background:#111;padding:20px 25px;gap:16px;border-bottom:2px solid #333;z-index:99}
+.mobile-nav a{color:#ddd;font-size:16px;font-weight:500;padding:8px 0;border-bottom:1px solid #222;transition:.3s}
+.mobile-nav a:hover{color:#fff}
+.mobile-nav a:last-child{border-bottom:none}
+.mobile-nav .btn-mobile{display:inline-block;background:var(--red);padding:12px 20px;border-radius:8px;font-weight:700;text-align:center;color:#fff;margin-top:5px;border:none}
+.mobile-nav .btn-mobile:hover{background:var(--red2)}
+/* Show mobile nav when open */
+.mobile-nav.open{display:flex}
 .btn{display:inline-block;background:var(--red);padding:13px 22px;border-radius:8px;font-weight:800;transition:.2s;border:none;cursor:pointer;color:#fff}
 .btn:hover{background:var(--red2);transform:translateY(-1px)}
 .btn.ghost{background:transparent;border:1px solid #444}.btn.ghost:hover{border-color:var(--red);color:#fff}
@@ -79,14 +90,30 @@ section{padding:92px 0}.section-head{text-align:center;max-width:760px;margin:0 
 .trustpilot-badge .rating{color:#fff;font-weight:800;font-size:18px}
 .trustpilot-badge .label{color:rgba(255,255,255,.85);font-size:13px;font-weight:500}
 .trustpilot-badge .divider{width:1px;height:24px;background:rgba(255,255,255,.2)}
-@media(max-width:900px){.payment-grid{grid-template-columns:repeat(3,1fr)}.footer-grid{grid-template-columns:repeat(2,1fr)}.testimonials{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.device-list{grid-template-columns:1fr}.payment-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column}.testimonials{grid-template-columns:1fr}}
-@media(max-width:900px){.pricing,.benefits,.reseller-grid{grid-template-columns:repeat(2,1fr)}.devices{grid-template-columns:1fr}}
+/* Mobile Responsive */
+@media(max-width:900px){
+.payment-grid{grid-template-columns:repeat(3,1fr)}
+.footer-grid{grid-template-columns:repeat(2,1fr)}
+.testimonials{grid-template-columns:repeat(2,1fr)}
+.pricing,.benefits,.reseller-grid{grid-template-columns:repeat(2,1fr)}
+.devices{grid-template-columns:1fr}
+}
 @media(max-width:600px){
-nav{display:none}
-.menu-toggle{display:block}
+.device-list{grid-template-columns:1fr}
+.payment-grid{grid-template-columns:repeat(2,1fr)}
+.footer-grid{grid-template-columns:1fr}
+.footer-bottom{flex-direction:column}
+.testimonials{grid-template-columns:1fr}
 .pricing,.benefits,.reseller-grid{grid-template-columns:1fr}
-.hero{min-height:620px}.hero-inner{padding:70px 0}section{padding:70px 0}h1{letter-spacing:-2px}
+.hero{min-height:620px}
+.hero-inner{padding:70px 0}
+section{padding:70px 0}
+h1{letter-spacing:-2px}
+/* Hide desktop nav, show mobile toggle */
+.desktop-nav{display:none}
+.menu-toggle{display:block}
+.mobile-nav{display:none}
+.mobile-nav.open{display:flex}
 }
 </style>
 
@@ -120,16 +147,32 @@ nav{display:none}
 <header>
 <div class="wrap nav">
 <a class="logo" href="#"><span>B1G</span> IPTV</a>
-<nav>
+
+<!-- Desktop Navigation -->
+<nav class="desktop-nav">
 <a href="#">Home</a>
 <a href="#pricing">Plans</a>
 <a href="#devices">Devices</a>
 <a href="#reseller">Reseller</a>
 <a href="#faq">FAQ</a>
 <a href="#testimonials">Reviews</a>
-</nav>
 <a class="btn btn-small" href="#pricing">Get Started</a>
+</nav>
+
+<!-- Mobile Hamburger Button -->
+<button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
 </div>
+
+<!-- Mobile Navigation (Hidden by default) -->
+<nav class="mobile-nav" id="mobileNav">
+<a href="#" onclick="closeMenu()">Home</a>
+<a href="#pricing" onclick="closeMenu()">Plans</a>
+<a href="#devices" onclick="closeMenu()">Devices</a>
+<a href="#reseller" onclick="closeMenu()">Reseller</a>
+<a href="#faq" onclick="closeMenu()">FAQ</a>
+<a href="#testimonials" onclick="closeMenu()">Reviews</a>
+<a class="btn-mobile" href="#pricing" onclick="closeMenu()">Get Started</a>
+</nav>
 </header>
 
 <main>
@@ -344,4 +387,31 @@ nav{display:none}
 <div class="footer-bottom"><span>© 2026 B1G IPTV. All rights reserved.</span><span>Terms · Privacy · Refund Policy</span></div>
 </div>
 </footer>
-</body></html>
+
+<!-- JavaScript for Mobile Menu -->
+<script>
+// Toggle mobile menu
+document.getElementById('menuToggle').addEventListener('click', function() {
+    var mobileNav = document.getElementById('mobileNav');
+    mobileNav.classList.toggle('open');
+});
+
+// Close mobile menu when a link is clicked
+function closeMenu() {
+    document.getElementById('mobileNav').classList.remove('open');
+}
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(event) {
+    var mobileNav = document.getElementById('mobileNav');
+    var menuToggle = document.getElementById('menuToggle');
+    var isClickInsideNav = mobileNav.contains(event.target);
+    var isClickOnToggle = menuToggle.contains(event.target);
+    
+    if (!isClickInsideNav && !isClickOnToggle && mobileNav.classList.contains('open')) {
+        mobileNav.classList.remove('open');
+    }
+});
+</script>
+</body>
+</html>
