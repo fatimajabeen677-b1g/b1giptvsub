@@ -55,5 +55,5 @@ Do not publish a placeholder number.
 - Add your real WhatsApp number if you want WhatsApp CTAs.
 - Add your real privacy, terms and refund policy pages.
 - Replace the demo hero image with an image you have permission to use.
-- Submit `https://b1giptvuk.com/sitemap.xml` in Google Search Console.
+- Submit `https://b1gplayeruk.com/sitemap.xml` in Google Search Console.
 - Confirm the canonical domain matches the final domain.
