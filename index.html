@@ -23,12 +23,14 @@
         .nav-links{display:flex;gap:28px;font-size:14px;font-weight:500}
         .nav-links a{color:#ccc;transition:.2s}
         .nav-links a:hover{color:#fff}
+        .nav-links .active{color:#e50914}
         .nav-cta{background:#e50914;padding:8px 20px;border-radius:30px;font-weight:700;color:#fff!important}
         .nav-cta:hover{background:#b20710}
         .hamburger{display:none;font-size:28px;background:none;border:none;color:#fff;cursor:pointer}
         .mobile-menu{display:none;flex-direction:column;background:#111;padding:20px;gap:14px;border-top:1px solid #222}
         .mobile-menu a{color:#ddd;font-size:16px;padding:6px 0;border-bottom:1px solid #222}
         .mobile-menu a:last-child{border-bottom:none}
+        .mobile-menu.open{display:flex}
         section{padding:80px 0}
         .section-title{text-align:center;max-width:720px;margin:0 auto 50px}
         .section-title h2{font-size:clamp(30px,4vw,44px);margin-bottom:12px}
@@ -52,7 +54,6 @@
         .btn-block{display:block;width:100%;text-align:center}
         .btn-green{background:#25D366}
         .btn-green:hover{background:#1da851}
-        /* ====== HERO ====== */
         .hero{min-height:620px;display:flex;align-items:center;background:radial-gradient(circle at 20% 40%,rgba(229,9,20,.15),transparent 60%),#0b0b0b;position:relative;overflow:hidden}
         .hero::before{content:'';position:absolute;top:-50%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(229,9,20,.06),transparent 70%);pointer-events:none}
         .hero .container{position:relative;z-index:2}
@@ -74,7 +75,6 @@
         .hero-trust-badge .text{color:#ccc;font-size:15px;line-height:1.6}
         .hero-trust-badge .text strong{color:#fff}
         .hero-trust-badge .text .highlight{color:#e50914;font-weight:600}
-        /* ====== WHAT'S INCLUDED ====== */
         .include-description{max-width:820px;margin:0 auto 30px;text-align:center;color:#ccc;font-size:17px;line-height:1.7}
         .include-description strong{color:#fff}
         .include-description .highlight{color:#e50914;font-weight:600}
@@ -84,14 +84,12 @@
         .channel-card .flag{font-size:28px;display:block;margin-bottom:6px}
         .channel-card .name{font-weight:700;font-size:16px;color:#eee;margin-bottom:4px}
         .channel-card .desc{font-size:13px;color:#999;line-height:1.4}
-        /* ====== EXPERIENCE ====== */
         .experience-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:20px}
         .experience-card{background:#121212;border:1px solid #282828;border-radius:14px;padding:24px 20px;text-align:center;transition:.2s}
         .experience-card:hover{border-color:#e50914;background:#181818}
         .experience-card .icon{font-size:34px;display:block;margin-bottom:10px}
         .experience-card h4{font-size:17px;margin-bottom:6px;color:#eee}
         .experience-card p{color:#999;font-size:14px;line-height:1.5}
-        /* ====== PRICING ====== */
         .pricing-trust-badge{display:flex;justify-content:center;align-items:center;gap:12px;background:rgba(37,211,102,.08);border:1px solid rgba(37,211,102,.2);border-radius:14px;padding:16px 28px;margin:30px auto 0;max-width:700px;flex-wrap:wrap;text-align:center}
         .pricing-trust-badge .icon{font-size:28px}
         .pricing-trust-badge .text{color:#ccc;font-size:16px;line-height:1.5}
@@ -107,7 +105,6 @@
         .inline-trust-badge .text strong{color:#fff}
         .inline-trust-badge .text .highlight{color:#25D366;font-weight:600}
         .pricing-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-        /* ====== DEVICES / COMPATIBILITY ====== */
         .compatibility-description{max-width:820px;margin:0 auto 30px;text-align:center;color:#ccc;font-size:17px;line-height:1.8}
         .compatibility-description strong{color:#fff}
         .compatibility-description .highlight{color:#e50914;font-weight:600}
@@ -117,7 +114,6 @@
         .device-card-custom .icon{font-size:32px;display:block;margin-bottom:8px}
         .device-card-custom .name{font-weight:700;font-size:15px;color:#eee;margin-bottom:4px}
         .device-card-custom .desc{font-size:13px;color:#999;line-height:1.4}
-        /* ====== APPS ====== */
         .apps-description{max-width:820px;margin:0 auto 30px;text-align:center;color:#ccc;font-size:17px;line-height:1.8}
         .apps-description strong{color:#fff}
         .apps-description .highlight{color:#e50914;font-weight:600}
@@ -127,7 +123,6 @@
         .app-item .icon{font-size:28px;display:block;margin-bottom:6px}
         .app-item .app-name{color:#eee;font-size:15px}
         .app-item .app-desc{color:#999;font-size:12px;font-weight:400;margin-top:4px}
-        /* ====== RESELLER ====== */
         .reseller-description{max-width:820px;margin:0 auto 30px;text-align:center;color:#ccc;font-size:17px;line-height:1.8}
         .reseller-description strong{color:#fff}
         .reseller-description .highlight{color:#e50914;font-weight:600}
@@ -137,7 +132,6 @@
         .reseller-card.featured{border-color:#e50914}
         .reseller-card .credits{font-size:42px;font-weight:800;color:#e50914}
         .reseller-card .credit-label{color:#999;font-size:14px;margin-top:-4px}
-        /* ====== TESTIMONIALS ====== */
         .trustpilot-badge{display:inline-flex;align-items:center;gap:14px;background:linear-gradient(135deg,#00b67a,#00d491);padding:10px 24px;border-radius:30px;border:1px solid rgba(255,255,255,.15);box-shadow:0 4px 20px rgba(0,182,122,.3);margin-bottom:30px}
         .trustpilot-badge .stars{color:#fff;font-size:18px;letter-spacing:1px}
         .trustpilot-badge .rating{color:#fff;font-weight:800;font-size:18px}
@@ -150,11 +144,9 @@
         .testimonial-card p{color:#ccc;font-size:14px;line-height:1.6;font-style:italic}
         .testimonial-card .name{color:#eee;font-weight:700;margin-top:10px;font-size:13px}
         .testimonial-card .source{color:#999;font-size:12px}
-        /* ====== PAYMENT ====== */
         .payment-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:12px}
         .payment-item{background:#121212;border:1px solid #282828;border-radius:12px;padding:16px;text-align:center;font-weight:600;font-size:13px}
         .payment-item .icon{font-size:24px;display:block;margin-bottom:4px}
-        /* ====== CTA ====== */
         .cta-section{background:linear-gradient(135deg,#1a0a0c,#0b0b0b);border-top:1px solid #2a1a1c;border-bottom:1px solid #2a1a1c;text-align:center;padding:70px 0}
         .cta-section h2{font-size:clamp(30px,4vw,48px)}
         .cta-section h2 span{color:#e50914}
@@ -237,6 +229,7 @@
             <a href="#apps">B1G Player</a>
             <a href="#reseller">IPTV Reseller</a>
             <a href="#testimonials">Reviews</a>
+            <a href="blog/index.html" class="active">Blog</a>
             <a href="#cta" class="nav-cta">Contact Us</a>
         </nav>
         <button class="hamburger" id="hamburger">☰</button>
@@ -246,6 +239,7 @@
         <a href="#apps">B1G Player</a>
         <a href="#reseller">IPTV Reseller</a>
         <a href="#testimonials">Reviews</a>
+        <a href="blog/index.html" style="color:#e50914;">Blog</a>
         <a href="#cta">Contact Us</a>
     </div>
 </header>
@@ -726,7 +720,6 @@
             <div class="footer-col">
                 <div class="logo" style="font-size:22px;"><span>B1G</span> IPTV</div>
                 <p style="margin-top:10px;">Your trusted <strong>IPTV UK</strong> provider. Thousands of channels, VOD, and premium sports — all on any device with <strong>B1G Player</strong> and <strong>B1G TV</strong>.</p>
-                <!-- Contact Details -->
                 <div class="footer-contact-item">
                     <span class="icon">📧</span>
                     <a href="mailto:codesfatima@gmail.com">codesfatima@gmail.com</a>
@@ -737,7 +730,7 @@
                 </div>
                 <p style="color:#666;font-size:13px;margin-top:12px;">© 2026 B1G IPTV. All rights reserved.</p>
             </div>
-            <div class="footer-col"><h4>Quick Links</h4><a href="#pricing">IPTV Pricing</a><a href="#apps">B1G Player</a><a href="#reseller">IPTV Reseller</a><a href="#testimonials">Reviews</a></div>
+            <div class="footer-col"><h4>Quick Links</h4><a href="#pricing">IPTV Pricing</a><a href="#apps">B1G Player</a><a href="#reseller">IPTV Reseller</a><a href="#testimonials">Reviews</a><a href="blog/index.html">Blog</a></div>
             <div class="footer-col"><h4>Support</h4><a href="https://wa.me/923020548889">WhatsApp</a><a href="mailto:codesfatima@gmail.com">Email Support</a><a href="#">Setup Guides</a><a href="#">FAQ</a></div>
             <div class="footer-col"><h4>Legal</h4><a href="#">Terms of Service</a><a href="#">Privacy Policy</a><a href="#">Refund Policy</a></div>
         </div>
@@ -761,7 +754,4 @@
 
 </body>
 </html>
-       
-  
-      
-       
+          
