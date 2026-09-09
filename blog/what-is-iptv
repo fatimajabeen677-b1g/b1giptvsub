@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>What Is IPTV and How Does It Work? Complete Beginner's Guide | B1G IPTV</title>
     <meta name="description" content="Discover what IPTV is, how it works and what you can watch. Learn about IPTV subscriptions, IPTV UK, compatible devices and IPTV players in this beginner-friendly guide.">
-    <link rel="canonical" href="https://b1gplayeruk.com/blog/what-is-iptv.html">
+    <link rel="canonical" href="https://b1gplayeruk.com/blog/what-is-iptv">
     <meta property="og:title" content="What Is IPTV and How Does It Work? Complete Beginner's Guide">
     <meta property="og:description" content="Discover what IPTV is, how it works and what you can watch. Learn about IPTV subscriptions, IPTV UK, compatible devices and IPTV players.">
-    <meta property="og:url" content="https://b1gplayeruk.com/blog/what-is-iptv.html">
+    <meta property="og:url" content="https://b1gplayeruk.com/blog/what-is-iptv">
     <meta property="og:type" content="article">
     <meta property="og:image" content="https://i.postimg.cc/9MJvYJkm/what_is_iptv.jpg">
     <meta name="twitter:card" content="summary_large_image">
@@ -28,7 +28,6 @@
     </script>
 
     <style>
-        /* Same styles as the blog index, plus post-specific styles */
         *{margin:0;padding:0;box-sizing:border-box}
         body{font-family:'Inter',-apple-system,sans-serif;background:#0b0b0b;color:#f0f0f0;line-height:1.6}
         a{text-decoration:none;color:inherit}
@@ -333,11 +332,11 @@
             </div>
         </div>
 
-        <!-- ====== RELATED POSTS ====== -->
+        <!-- ====== RELATED POSTS (UPDATED: removed .html) ====== -->
         <h3 style="margin:40px 0 16px;font-size:22px;">📚 You Might Also Like</h3>
         <div class="related-posts">
             <div class="related-card">
-                <h4><a href="b1g-iptv-new-channels.html">B1G IPTV Adds 200+ New 4K Channels</a></h4>
+                <h4><a href="b1g-iptv-new-channels">B1G IPTV Adds 200+ New 4K Channels</a></h4>
                 <span class="date">9 September 2026</span>
             </div>
             <div class="related-card">
