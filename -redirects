@@ -1,0 +1,8 @@
+# Clean URLs
+/blog/what-is-iptv    /blog/what-is-iptv.html    200
+
+# Redirect .html requests to clean URLs
+/blog/what-is-iptv.html    /blog/what-is-iptv    301
+
+# Fallback 404
+/*    /404.html    404
